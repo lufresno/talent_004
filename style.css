@@ -1,0 +1,195 @@
+/* General Body Styling */
+body {
+    font-family: "Afacad Flux", serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #000;
+    color: #f00;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#logo-netflix {
+    width: 150px;
+    height: auto;
+}
+
+/* Filtros y Botones */
+.filtros, .buscar {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.select-box, .input-box {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #f00;
+    background-color: #000;
+    color: #f00;
+    font-size: 1rem;
+}
+
+.select-box:hover, .input-box:hover {
+    border-color: #fff;
+}
+
+/* Botón Adaptado */
+.button {
+  font-family: "Afacad Flux", serif;
+    position: relative;
+    padding: 10px 22px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: #ff0000; /* Rojo de fondo */
+    transition: all 0.2s ease;
+  }
+  
+  .button:active {
+    transform: scale(0.96);
+  }
+  
+  .button:before,
+  .button:after {
+    position: absolute;
+    content: "";
+    width: 150%;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: -1000;
+    background-repeat: no-repeat;
+  }
+  
+  .button:hover:before {
+    top: -70%;
+    background-image: radial-gradient(circle, #ff0000 20%, transparent 20%),
+      radial-gradient(circle, transparent 20%, #ff4040 20%, transparent 30%),
+      radial-gradient(circle, #ff0000 20%, transparent 20%),
+      radial-gradient(circle, #ff4040 20%, transparent 20%),
+      radial-gradient(circle, transparent 10%, #ff0000 15%, transparent 20%),
+      radial-gradient(circle, #ff4040 20%, transparent 20%),
+      radial-gradient(circle, #ff0000 20%, transparent 20%),
+      radial-gradient(circle, #ff4040 20%, transparent 20%),
+      radial-gradient(circle, #ff0000 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+      10% 10%, 18% 18%;
+    background-position: 50% 120%;
+    animation: redtopBubbles 0.6s ease;
+  }
+  
+  @keyframes redtopBubbles {
+    0% {
+      background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+        40% 90%, 55% 90%, 70% 90%;
+    }
+  
+    50% {
+      background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+        50% 50%, 65% 20%, 90% 30%;
+    }
+  
+    100% {
+      background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+        50% 40%, 65% 10%, 90% 20%;
+      background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+  }
+  
+  .button:hover::after {
+    bottom: -70%;
+    background-image: radial-gradient(circle, #ff0000 20%, transparent 20%),
+      radial-gradient(circle, #ff4040 20%, transparent 20%),
+      radial-gradient(circle, transparent 10%, #ff0000 15%, transparent 20%),
+      radial-gradient(circle, #ff4040 20%, transparent 20%),
+      radial-gradient(circle, #ff0000 20%, transparent 20%),
+      radial-gradient(circle, #ff4040 20%, transparent 20%),
+      radial-gradient(circle, #ff0000 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+    background-position: 50% 0%;
+    animation: redbottomBubbles 0.6s ease;
+  }
+  
+  @keyframes redbottomBubbles {
+    0% {
+      background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+        70% -10%, 70% 0%;
+    }
+  
+    50% {
+      background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+        105% 0%;
+    }
+  
+    100% {
+      background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+        110% 10%;
+      background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+  }
+  
+
+/* Contenedor de Películas */
+#contenedor-peliculas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tarjeta de Película */
+.tarjeta {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
+    background-color: #111;
+    color: #f00;
+    text-align: center;
+}
+
+.tarjeta:hover {
+    transform: scale(1.05);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.tarjeta .info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #f00;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.tarjeta:hover img {
+    opacity: 0;
+}
+
+.tarjeta:hover .info {
+    opacity: 1;
+}

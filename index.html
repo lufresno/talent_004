@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío con Películas</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Anton&family=Archivo+Black&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/img/logoNetflix.png" alt="Netflix Logo" id="logo-netflix">
+    </header>
+
+    <div class="filtros">
+        <select id="filtro-genero" class="select-box">
+            <option value="">Todos los géneros</option>
+        </select>
+        <input type="text" id="buscar-titulo" placeholder="Buscar por título" class="input-box">
+        <button id="ordenar-asc" class="button">Ordenar por Año (Asc)</button>
+        <button id="ordenar-desc" class="button">Ordenar por Año (Desc)</button>
+        <button id="buscar-boton" class="button">Buscar</button>
+    </div>
+    
+
+    <div id="contenedor-peliculas" class="tarjetas">
+        <!-- Las películas se cargarán aquí -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
